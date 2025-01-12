@@ -6,21 +6,7 @@ const NewNote = ({ setChange }: { setChange: React.Dispatch<React.SetStateAction
         e.preventDefault();
         AddNote(e.currentTarget.note.value);
         setChange(prevState => !prevState);
-        // fetch(Url, {
-        //     mode: 'no-cors',
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': "application/json; charset=UTF-8"
-        //     },
-        //     body: JSON.stringify({
-        //         // title: e.currentTarget.title.value,
-        //         content: e.currentTarget.note.value
-        //     })
-        // })
-        // console.log(JSON.stringify({
-        //     // title: e.currentTarget.title.value,
-        //     content: e.currentTarget.note.value
-        // }));
+
     }
     return (
         <>

@@ -1,10 +1,34 @@
 
-import { Note } from '../model/NoteInterface'
 
-export const Notes = (props: Note) => {
+import { DeleteNoteById } from '../controller/DeleteNoteById';
+import classes from './Note.module.css';
+
+// { setChange }: { setChange: React.Dispatch<React.SetStateAction<boolean>> },
+
+type Props = {
+    id: number;
+    content: string
+    setChange: (state: boolean) => void;
+}
+export const Notes = ({ id, content, setChange }: Props) => {
+
+
+
+    const handleClick = () => {
+        DeleteNoteById(id);
+        console.log(id)
+
+        setChange(prevState => !prevState);
+    }
+
 
     return (
-        <div key={props.id}>{props.content}</div>
+        <>
+            <div className={classes['note-wrapper']}>
+                <div className={classes['note-content']} key={id}>{content}</div>
+                <button className={classes['note-button']} onClick={handleClick}>X</button>
+            </div>
+        </>
     )
 }
 
