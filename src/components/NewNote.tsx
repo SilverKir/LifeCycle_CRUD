@@ -1,5 +1,6 @@
 
 import AddNote from '../controller/AddNote';
+import classes from './NewNote.module.css';
 
 const NewNote = ({ setChange }: { setChange: React.Dispatch<React.SetStateAction<boolean>> }) => {
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -10,12 +11,10 @@ const NewNote = ({ setChange }: { setChange: React.Dispatch<React.SetStateAction
     }
     return (
         <>
-            <form onSubmit={handleSubmit}>
-                <label htmlFor="title">Заголовок</label>
-                <input type="text" id="title" />
-                <label htmlFor="note">Заметка</label>
-                <textarea id="note" />
-                <button type='submit'>Добавить</button>
+            <form className={classes['new-note-wrapper']} onSubmit={handleSubmit}>
+                <h3>New Note</h3>
+                <textarea className={classes['new-note-texterea']} id="note" />
+                <button className={classes['new-note-button']} typeof='submit' >double_arrow</button>
             </form>
         </>
     )

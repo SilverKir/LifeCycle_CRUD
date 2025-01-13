@@ -3,6 +3,7 @@ import { GetNotes } from '../controller/GetNotes'
 import NewNote from './NewNote'
 import { Notes } from './Note'
 import { Note } from '../model/NoteInterface'
+import classes from './NotesList.module.css'
 
 export const NotesList = () => {
 
@@ -33,18 +34,15 @@ export const NotesList = () => {
 
     return (
         <>
-            <div>
+            <div className={classes['header']}>
                 <h1>Notes</h1>
-                <button onClick={() => setOnChange(prevState => !prevState)}>Обновить</button>
-            </div>
-
-            <div>
+                <button className={classes['update-button']} onClick={() => setOnChange(prevState => !prevState)}>sync</button>
+            </div >
+            <div className={classes['notes-list']}>
                 {notes.map(note =>
-
                     <Notes key={note.id} {...note} setChange={setOnChange} />
                 )}
             </div>
-
             <NewNote setChange={setOnChange} />
         </>
 

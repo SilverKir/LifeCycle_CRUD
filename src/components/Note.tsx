@@ -3,8 +3,6 @@
 import { DeleteNoteById } from '../controller/DeleteNoteById';
 import classes from './Note.module.css';
 
-// { setChange }: { setChange: React.Dispatch<React.SetStateAction<boolean>> },
-
 type Props = {
     id: number;
     content: string
@@ -12,15 +10,11 @@ type Props = {
 }
 export const Notes = ({ id, content, setChange }: Props) => {
 
-
-
     const handleClick = () => {
         DeleteNoteById(id);
-        console.log(id)
-
+        console.log(id);
         setChange(prevState => !prevState);
     }
-
 
     return (
         <>

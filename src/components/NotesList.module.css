@@ -1,0 +1,32 @@
+.update-button{
+    margin-left: 10px;
+    padding: 0;
+    font-family: 'Material Icons';
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    color: rgb(75, 199, 75);
+    border: solid 2px black;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 26px;
+    font-weight: bold;
+    display: inline-block; 
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    justify-content:flex-start;
+    align-items: center;
+
+}
+
+.notes-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
