@@ -6,7 +6,7 @@ import classes from './Note.module.css';
 type Props = {
     id: number;
     content: string
-    setChange: (state: boolean) => void;
+    setChange: (state: React.SetStateAction<boolean>) => void;
 }
 export const Notes = ({ id, content, setChange }: Props) => {
 
